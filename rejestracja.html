@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Strona główna Biblioteka </title>
-  <meta name="description" content="Strona Biblioteki"/>
+  <meta name="description" content="Strona Biblioteki" />
 
   <!-- Title -->
   <meta property="LibraryApp" content="" />
@@ -23,17 +23,48 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-icon" sizes="192x192" href="images/logo.jpg" />
 
-  <link rel="Shortcut icon" href="images/logo.jpg"/>
+  <link rel="Shortcut icon" href="images/logo.jpg" />
   <!-- to potrzebne do PWA, później trzeba zrobic jakas ikonke i dodać-->
   <link rel="stylesheet" href="css/main.css" />
-  <link href="https://fonts.googleapis.com/css?family=Anton|Josefin+Sans|Pathway+Gothic+One|Raleway" rel="stylesheet">	
- 
+  <link href="https://fonts.googleapis.com/css?family=Anton|Josefin+Sans|Pathway+Gothic+One|Raleway" rel="stylesheet">
+
 </head>
+
 <body>
-
-<h2>Rejestracja </h2>
-
+  <main class="registration_main">
+      <div class="article__wrapper">
+          <h2 class="formHeader">Formularz Rejestracyjny</h2>
+          <div class="form__wrapper">
+            <form class="registerForm form">
+              <div class="form__bar">
+                <label class="test__label" for="userName"><span><img alt="Obrazek" src="../assets/img/user.png"
+                      class="userImage"></span></label>
+                <input class="test__input" type="text" name="userName" placeholder="Username" required="required">
+              </div>
+              <div class="form__bar">
+                <label class="test__label" for="password"><span><img alt="Obrazek" src="../assets/img/password.png"
+                      class="userImage"></span></label>
+                <input class="test__input" type="password" name="password" placeholder="Password" required="required">
+              </div>
+              <div class="form__bar">
+                <label class="test__label" for="passwordConfirm"><span><img alt="Obrazek"
+                      src="../assets/img/password.png" class="userImage"></span></label>
+                <input class="test__input" type="password" name="passwordConfirm" placeholder="Confirm Passowrd"
+                  required="required">
+              </div>
+              <div class="form__bar">
+                <label class="test__label" for="email"><span><img alt="Obrazek" src="../assets/img/email.png"
+                      class="userImage"></span></label>
+                <input class="test__input" type="text" name="email" placeholder="Email" required="required">
+              <div class="checkbox">
+                <label class="test__label" for="checkbox">
+                  <p>I have read and accept the terms of use <input class="chexbox_item" type="checkbox" name="checkbox"></p> 
+                </label>
+              </div>
+              <button class="form__button">Sign Up</button>
+            </form>
+          </div>
+        </div>
+  </main>
 </body>
 </html>
-
-

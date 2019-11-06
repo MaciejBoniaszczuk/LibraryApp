@@ -12,7 +12,7 @@ html {
 
 
 body{
-	background-color:white;
+	background-image: url("../assets/img/brickwall.png");
 }
 
 .container{
@@ -180,11 +180,58 @@ h3{
 	
 }
 
+//formularze
+
+.registration_main{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	
+}
+.registerForm form{
+	display:flex;
+	
+}
+.form__button{
+	width:100%;
+}
+
+.article__wrapper {
 
 
+	display: flex;
+	align-items: center;
+	flex-basis: auto;
+	flex-direction: column;
+	padding-top: 30px;
+	min-width: 300px;
+  
+  }
 
 
+.form__wrapper {
 
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, .2);
+	padding: 15px;
+  
+  }
 
+  .form {
+	width: 382px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	background-color: #f4f4f4;
+	align-self: center;
+	padding: 10px;
+  
+  }
+.remember{
+	display: flex;
+}
 
-
+.chexbox_item{
+	margin-left:10px;
+}

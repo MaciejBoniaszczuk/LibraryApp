@@ -1,4 +1,4 @@
-﻿<!Doctype html>
+<!Doctype html>
 
 <html lang="pl">
 
@@ -30,32 +30,7 @@
  
 </head>
 <body>
-  <main class="registration_main">
-    <div class="article__wrapper">
-        <h2 class="formHeader">Sign In Form</h2>
-        <div class="form__wrapper">
-          <form action="log.php" method="POST" class="SignIn__Form form">
-            <div class="form__bar">
-            <label class="form__bar" for="userName"><span><img alt="Obrazek" src="../assets/img/user.png"
-                  class="userImage"></span></label>
-            <input type="text" name="userName" placeholder="Username" required="required">
-            </div>
-            <div class="form__bar">
-            <label class="form__bar" for="password"><span><img alt="Obrazek" src="../assets/img/password.png"
-                  class="userImage"></span></label>
-            <input type="password" name="password" placeholder="Password" required="required">
-            </div>
-            <label for="checkbox" class="form__bar remember">
-              
-                <p class="rememberMe" >Remember me</p>
-                <input class="chexbox_item" type="checkbox" name="checkbox">
-                
-              </label>
-            <button class="form__button">Sign In</button>
-          </form>
-        </div>
-      </div>
-    </main>
+<h1>Hello</h1>
 </body>
 </html>
 

@@ -17,7 +17,7 @@
   <!-- full url to the image with http(s) ie. https://github.com/MaciejBoniaszczuk/LibraryApp/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
   <meta property="og:image" content="https://github.com/MaciejBoniaszczuk/LibraryApp/assets/img/cover.png" />
 
-  <!-- to u góry to takie google analitycs troche mozna w wolnej chwili sie tym zająć-->
+  <!-- to u góry to takie google analitycs troche mozna w wolnej chwili sie tym zająć -->
 
   <link rel="manifest" href="manifest.json" />
   <meta name="apple-mobile-web-app-capable" content="yes" />

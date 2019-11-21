@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lis 2019, 21:14
+-- Czas generowania: 21 Lis 2019, 21:55
 -- Wersja serwera: 10.4.8-MariaDB
 -- Wersja PHP: 7.3.11
 
@@ -36,6 +36,16 @@ CREATE TABLE `books` (
   `Publisher` text COLLATE utf8_polish_ci NOT NULL,
   `Year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `books`
+--
+
+INSERT INTO `books` (`idBooks`, `Title`, `First Name`, `Last Name`, `Publisher`, `Year`) VALUES
+(2, 'PHP : 101 praktycznych skryptów', 'Marcin', 'Lis', 'Helion', 2007),
+(3, 'PHP', 'Julie', 'C. Meloni', 'Wydawnictwo RM', 2001),
+(4, 'PHP : praktyczne projekty', 'Włodzimierz', 'Gajda', 'Helion', 2009),
+(5, 'PHP i MySQL : 101 porad', 'Łukasz', 'Sosna', 'Mikom', 2005);
 
 -- --------------------------------------------------------
 
@@ -81,7 +91,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT dla tabeli `books`
 --
 ALTER TABLE `books`
-  MODIFY `idBooks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idBooks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lis 2019, 18:17
+-- Czas generowania: 21 Lis 2019, 21:14
 -- Wersja serwera: 10.4.8-MariaDB
 -- Wersja PHP: 7.3.11
 
@@ -29,12 +29,39 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `books` (
-  `id` int(11) NOT NULL,
+  `idBooks` int(11) NOT NULL,
   `Title` text COLLATE utf8_polish_ci NOT NULL,
-  `Author` text COLLATE utf8_polish_ci NOT NULL,
+  `First Name` text COLLATE utf8_polish_ci NOT NULL,
+  `Last Name` text COLLATE utf8_polish_ci NOT NULL,
   `Publisher` text COLLATE utf8_polish_ci NOT NULL,
   `Year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `clients`
+--
+
+CREATE TABLE `clients` (
+  `idClients` int(11) DEFAULT NULL,
+  `First Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `Last Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `Index Number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `order`
+--
+
+CREATE TABLE `order` (
+  `idBorred` int(11) DEFAULT NULL,
+  `idClients` int(11) NOT NULL,
+  `idBooks` int(11) NOT NULL,
+  `Date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -44,7 +71,7 @@ CREATE TABLE `books` (
 -- Indeksy dla tabeli `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idBooks`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -54,7 +81,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT dla tabeli `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idBooks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

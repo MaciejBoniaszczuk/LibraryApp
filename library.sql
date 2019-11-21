@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lis 2019, 22:08
+-- Czas generowania: 21 Lis 2019, 22:13
 -- Wersja serwera: 10.4.8-MariaDB
 -- Wersja PHP: 7.3.11
 
@@ -59,6 +59,16 @@ CREATE TABLE `borred` (
   `idBooks` int(11) NOT NULL,
   `Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `borred`
+--
+
+INSERT INTO `borred` (`idBorred`, `idClients`, `idBooks`, `Date`) VALUES
+(1, 2, 1, '2019-05-26'),
+(2, 3, 4, '2019-07-15'),
+(3, 2, 1, '2019-10-20'),
+(4, 4, 4, '2019-03-13');
 
 -- --------------------------------------------------------
 
@@ -119,7 +129,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT dla tabeli `borred`
 --
 ALTER TABLE `borred`
-  MODIFY `idBorred` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBorred` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `clients`

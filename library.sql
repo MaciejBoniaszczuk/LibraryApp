@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lis 2019, 22:13
+-- Czas generowania: 21 Lis 2019, 22:24
 -- Wersja serwera: 10.4.8-MariaDB
 -- Wersja PHP: 7.3.11
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `library`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `login` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `password` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `admin`
+--
+
+INSERT INTO `admin` (`id`, `login`, `password`) VALUES
+(1, 'lehu', 'elooo22');
 
 -- --------------------------------------------------------
 
@@ -80,22 +99,30 @@ CREATE TABLE `clients` (
   `idClients` int(11) NOT NULL,
   `First Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `Last Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `Index Number` int(11) NOT NULL
+  `Index Number` int(11) NOT NULL,
+  `login` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `password` text COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
 -- Zrzut danych tabeli `clients`
 --
 
-INSERT INTO `clients` (`idClients`, `First Name`, `Last Name`, `Index Number`) VALUES
-(1, 'Katarzyna', 'Andruszewicz', 145698),
-(2, 'Anna', 'Kowal', 628465),
-(3, 'Krzysztof', 'Kopeć', 456458),
-(4, 'Artur', 'Romanowicz', 768249);
+INSERT INTO `clients` (`idClients`, `First Name`, `Last Name`, `Index Number`, `login`, `password`) VALUES
+(1, 'Katarzyna', 'Andruszewicz', 145698, 'kaa', '123'),
+(2, 'Anna', 'Kowal', 628465, 'anni', 'iksde'),
+(3, 'Krzysztof', 'Kopeć', 456458, 'kopi', 'xxixx'),
+(4, 'Artur', 'Romanowicz', 768249, 'romek', 'rOman');
 
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeksy dla tabeli `books`
@@ -118,6 +145,12 @@ ALTER TABLE `clients`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `books`

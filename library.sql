@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lis 2019, 21:55
+-- Czas generowania: 21 Lis 2019, 22:08
 -- Wersja serwera: 10.4.8-MariaDB
 -- Wersja PHP: 7.3.11
 
@@ -50,28 +50,38 @@ INSERT INTO `books` (`idBooks`, `Title`, `First Name`, `Last Name`, `Publisher`,
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `clients`
+-- Struktura tabeli dla tabeli `borred`
 --
 
-CREATE TABLE `clients` (
-  `idClients` int(11) DEFAULT NULL,
-  `First Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `Last Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `Index Number` int(11) NOT NULL
+CREATE TABLE `borred` (
+  `idBorred` int(11) NOT NULL,
+  `idClients` int(11) NOT NULL,
+  `idBooks` int(11) NOT NULL,
+  `Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `order`
+-- Struktura tabeli dla tabeli `clients`
 --
 
-CREATE TABLE `order` (
-  `idBorred` int(11) DEFAULT NULL,
+CREATE TABLE `clients` (
   `idClients` int(11) NOT NULL,
-  `idBooks` int(11) NOT NULL,
-  `Date` date NOT NULL
+  `First Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `Last Name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `Index Number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `clients`
+--
+
+INSERT INTO `clients` (`idClients`, `First Name`, `Last Name`, `Index Number`) VALUES
+(1, 'Katarzyna', 'Andruszewicz', 145698),
+(2, 'Anna', 'Kowal', 628465),
+(3, 'Krzysztof', 'Kopeć', 456458),
+(4, 'Artur', 'Romanowicz', 768249);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -84,6 +94,18 @@ ALTER TABLE `books`
   ADD PRIMARY KEY (`idBooks`);
 
 --
+-- Indeksy dla tabeli `borred`
+--
+ALTER TABLE `borred`
+  ADD PRIMARY KEY (`idBorred`);
+
+--
+-- Indeksy dla tabeli `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`idClients`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -92,6 +114,18 @@ ALTER TABLE `books`
 --
 ALTER TABLE `books`
   MODIFY `idBooks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `borred`
+--
+ALTER TABLE `borred`
+  MODIFY `idBorred` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `idClients` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

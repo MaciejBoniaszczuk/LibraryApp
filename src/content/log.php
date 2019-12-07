@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once "connect.php";
 
 $connection = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -21,9 +23,11 @@ else {
     if ($how_many_users>0)
     {
       $row = $result->fetch_assoc();
-      $user = $row['login'];
+      $_SESSION['user'] = $row['login'];
 
       $result->free_result();
+
+      header('Location: user.php');
     } else {
       
     }

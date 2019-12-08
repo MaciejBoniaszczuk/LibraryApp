@@ -37,6 +37,8 @@ session_start();
 <body>
   <?php
     echo "<p>Witaj ".$_SESSION['user'];
+    echo "<p>Zalogowano jako: ".$_SESSION['firstName']." ";
+    echo $_SESSION['lastName']."</p>";
 
 
 

@@ -3,10 +3,14 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
+require("dotenv").config();
 const productRoutes = require('../api/routes/products');
 const orderRoutes = require('../api/routes/orders');
 const userRoutes = require('../api/routes/user');
+const url = require('url');
+var fs = require('fs');
+app.use(cors());
 
 mongoose.connect(
     "mongodb+srv://admin:admin123@node-rest-library-t0qfq.mongodb.net/test?retryWrites=true&w=majority", {
@@ -55,4 +59,42 @@ app.use((error, req, res, next) => {
     });
 });
 
+
+
+
+
 module.exports = app;
+
+// function renderHTML(path, response) {
+//     fs.readFile(path, function (err, html) {
+
+//         if (err) throw err;
+//         response.write(html);
+//         response.end();
+//     });
+
+// }
+
+// module.exports = {
+//     handleRequest: function (request, resposne) {
+//         resposne.writeHead(200, {
+//             'Content-Type': 'text/html'
+//         });
+
+//         var path = url.parse(request.url).pathname;
+//         switch (path) {
+//             case '/':
+//                 renderHTML('./index.html', response);
+//                 break;
+//             case '/login':
+//                 renderHTML('./login.html', response);
+//                 break;
+//             default:
+//                 response.writeHead(404);
+//                 response.write("Nie ma takiej strony");
+//                 response.end();
+
+//         }
+
+//     }
+// };

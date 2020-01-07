@@ -70,12 +70,11 @@ router.get("/", (req, res, next) => {
         });
 });
 
-router.post("/", upload.single('productImage'), (req, res, next) => {
+router.post("/", (req, res, next) => {
     const product = new Product({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
-        price: req.body.price,
-        productImage: req.file.path
+        price: req.body.price
     });
     product
         .save()
@@ -107,7 +106,7 @@ router.post("/", upload.single('productImage'), (req, res, next) => {
 router.get("/:productId", (req, res, next) => {
     const id = req.params.productId;
     Product.findById(id)
-        .select('name price _id productImage')
+        .select('name price _id')
         .exec()
         .then(doc => {
             console.log("From database", doc);

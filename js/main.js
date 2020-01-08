@@ -28,7 +28,8 @@ fetch('http://localhost:3000/products/')
 
     })
 
-const zalogowany = document.querySelector('.zalogowany')
+//zalogowany uzytkownik
+    /*const zalogowany = document.querySelector('.zalogowany')
 fetch('http://localhost:3000/products/')
     .then(resp => {
         return resp.json();
@@ -39,5 +40,5 @@ fetch('http://localhost:3000/products/')
             zalogowany.innerHTML += `<div><img src="assets/img/logogreen.png" width="20" height="20" hspace="5">${repos.products[i].name}</div>`
         }
 
-    })
+    }) */
 

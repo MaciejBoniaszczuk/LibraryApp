@@ -60,15 +60,11 @@ router.post("/login", (req, res, next) => {
         .exec()
         .then(user => {
             if (user.length < 1) {
-                return res.status(401).json({
-                    message: "Auth failed"
-                });
+                return res.redirect('/authfailed');
             }
             bcrypt.compare(req.body.password, user[0].password, (err, result) => {
                 if (err) {
-                    return res.status(401).json({
-                        message: "Auth failed"
-                    });
+                    return res.redirect('/authfailed');
                 }
                 if (result) {
                     const token = jwt.sign({
@@ -81,9 +77,7 @@ router.post("/login", (req, res, next) => {
                     );
                     return res.redirect('/dashboard');
                 }
-                res.status(401).json({
-                    message: "Auth failed"
-                });
+                return res.redirect('/authfailed');
             });
         })
         .catch(err => {

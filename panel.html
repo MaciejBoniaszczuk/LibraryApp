@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Strona główna Biblioteka </title>
+	<title>Panel użytkownika </title>
 	<meta name="description" content="Strona Biblioteki" />
 
 	<!-- Title -->
@@ -50,9 +50,9 @@
 
 			<div class="menu">
 				<ul>
-					<li><a class="active" href="index.html">Strona główna</a></li>
+					<li><a  href="log.html">Strona główna</a></li>
 					<li class="dropdown"><a href="spis.html" class="dropbtn">Spis książek</a></li>
-					<li><a href="rejestracja.html">Rejestracja</a></li>
+					<li><a class="active" href="panel.html">Panel użytkownika</a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,41 +62,19 @@
 
 		<div class="content">
 
-			<div class="text_content">
+			<div class="text_content_afterlogin">
 
-				<h1>Witaj na stronie głównej Biblioteki</h1>
-				<h2>Aby wypożyczyć książkę, zaloguj się.</h2>
+                <h1>Panel użytkownika</h1>
+                
+                <h3>Zalogowano jako</h3>
+                <div class="login_zalogowanego"></div>
+                
+                <h3>Wypożyczone pozycje</h3>
+                <div class="wypozyczone_ksiazki"></div>
 
-				<main class="registration_main">
-					<div class="article__wrapper">
-					  <h2 class="formHeader">Logowanie</h2>
-					  <div class="form__wrapper">
-						<form action="log.html" method="POST" class="SignIn__Form form">
-						  <div class="form__bar">
-							<label class="form__bar" for="userName"><span><img alt="Obrazek" src="assets/img/user.png"
-								  class="userImage"></span></label>
-							<input type="text" name="userName" placeholder="E-mail/Login" required="required">
-						  </div>
-						  <div class="form__bar">
-							<label class="form__bar" for="password"><span><img alt="Obrazek" src="assets/img/password.png"
-								  class="userImage"></span></label>
-							<input type="password" name="password" placeholder="Hasło" required="required">
-						  </div>
-						  <label for="checkbox" class="form__bar remember">
-				
-							<p class="rememberMe">Zapamiętaj mnie</p>
-							<input class="chexbox_item" type="checkbox" name="checkbox">
-				
-						  </label>
-						  <button class="form__button">Zaloguj się</button>
-						  <button class="form__button"><a href="rejestracja.html" style="color:black">Nie masz konta? Zarejestruj się</a></button>
-						</form>
-					  </div>
-					</div>
-				  </main>
-
-
-				<p>Strona, którą przeglądasz jest storzona w ramach przedmiotu "Projekt grupowy II".</p>
+                <h3>Dostępne pozycje</h3>
+                <div class="wolne_ksiazki"></div>
+               
 
 			</div>
 		</div>

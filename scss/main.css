@@ -154,6 +154,17 @@ li:first-child {
 	overflow: auto;
 	text-align: center;
 }
+.text_content_afterlogin {
+	height: 580px;
+	padding: 10px;
+	font-size: 18px;
+	border: solid;
+	text-align: justify;
+	border-radius: 10px;
+	font-family: 'Raleway', sans-serif;
+	overflow: auto;
+	text-align: left;
+}
 
 a {
 	text-decoration: none;

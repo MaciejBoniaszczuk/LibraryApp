@@ -1,4 +1,5 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -8,6 +9,8 @@ require("dotenv").config();
 const productRoutes = require('../api/routes/products');
 const orderRoutes = require('../api/routes/orders');
 const userRoutes = require('../api/routes/user');
+const indexRoutes = require('../api/routes/index');
+
 const url = require('url');
 var fs = require('fs');
 app.use(cors());
@@ -37,13 +40,18 @@ app.use((req, res, next) => {
     }
     next();
 });
+//EJS
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
+
 
 
 //Routes which should handle request
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
-
+app.use('/', indexRoutes);
+app.use('/myFiles', express.static('public'));
 app.use((req, res, next) => {
     const error = new Error('Not found');
     error.status = 404;

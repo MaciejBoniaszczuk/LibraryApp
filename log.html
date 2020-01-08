@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Strona główna Biblioteka </title>
+	<meta name="description" content="Strona Biblioteki" />
+
+	<!-- Title -->
+	<meta property="LibraryApp" content="" />
+	<!-- OPTIONAL description. 2-4 sentences. -->
+	<meta property="LibraryApp" content="" />
+	<meta property="og:url" content="https://github.com/MaciejBoniaszczuk/LibraryApp" />
+	<!-- full url to the image with http(s) ie. https://github.com/MaciejBoniaszczuk/LibraryApp/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
+	<meta property="og:image" content="https://github.com/MaciejBoniaszczuk/LibraryApp/assets/img/cover.png" />
+
+	<!-- to u góry to takie google analitycs troche mozna w wolnej chwili sie tym zająć-->
+
+	<link rel="manifest" href="manifest.json" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" sizes="192x192" href="/assets/img/logo.jpg" />
+
+	<link rel="Shortcut icon" href="/assets/img/logo.jpg"/>
+	<!-- to potrzebne do PWA, później trzeba zrobic jakas ikonke i dodać-->
+	<link rel="stylesheet" href="scss/main.css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Anton|Josefin+Sans|Pathway+Gothic+One|Raleway" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="gorna_belka">
+			<div class="logo">
+				<div class="obraz_logo">
+					<a href="https://maciejboniaszczuk.github.io/LibraryApp">
+						<img src="assets/img/logo.jpg" width="70" height="70">
+					</a>
+				</div>
+				<div class="text_logo">
+					<span style="color:black">
+						<font size="6">Biblioteka</font>
+					</span>
+					<br>LibraryApp
+				</div>
+			</div>
+
+			<div class="menu">
+				<ul>
+					<li><a class="active" href="log.html">Strona główna</a></li>
+					<li class="dropdown"><a href="spis.html" class="dropbtn">Spis książek</a></li>
+					<li><a href="panel.html">Panel użytkownika</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div style="clear:both"></div>
+		<div class="spacer"></div>
+
+		<div class="content">
+
+			<div class="text_content_afterlogin">
+
+                <h1>Witaj na stronie głównej Biblioteki</h1>
+                
+                <h3>Zalogowano jako</h3>
+                <div class="login_zalogowanego"></div>
+                
+                <h3>Dostępne pozycje</h3>
+                <div class="wolne_ksiazki"></div>
+               
+                <h3>Spis wszystkich pozycji</h3>
+                <div class="wszystkie_ksiazki"></div>
+
+				
+
+			</div>
+		</div>
+
+
+	</div>
+	<div class="stopka">
+		2019 &copy; Boniaszczuk Kuderewski Ulenberg
+	</div>
+
+
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>

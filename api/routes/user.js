@@ -6,6 +6,13 @@ const jwt = require('jsonwebtoken');
 const User = require("../models/user");
 
 router.post("/signup", (req, res, next) => {
+    const {
+        name,
+        email,
+        password,
+        password2
+    } = req.body;
+    console.log(req.body)
     User.find({
             email: req.body.email
         })
@@ -90,6 +97,15 @@ router.post("/login", (req, res, next) => {
             });
         });
 });
+//Login Page
+router.get("/login", (req, res) => res.render("login"));
+
+
+//Register Page
+router.get("/register", (req, res) => res.render("register"));
+
+
+router.get("/dashboard", (req, res) => res.render("dashboard"));
 
 router.delete("/:userId", (req, res, next) => {
     User.remove({

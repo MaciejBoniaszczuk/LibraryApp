@@ -10,10 +10,22 @@ const productRoutes = require('../api/routes/products');
 const orderRoutes = require('../api/routes/orders');
 const userRoutes = require('../api/routes/user');
 const indexRoutes = require('../api/routes/index');
+const passport = require('passport');
+const flash = require("connect-flash");
+
+app.use(flash());
+var session = require('express-session');
+
+//...
+
+
 
 const url = require('url');
 var fs = require('fs');
 app.use(cors());
+
+require('../config/passport')(passport);
+
 
 mongoose.connect(
     "mongodb+srv://admin:admin123@node-rest-library-t0qfq.mongodb.net/test?retryWrites=true&w=majority", {
@@ -23,6 +35,9 @@ mongoose.connect(
 
 );
 mongoose.Promise = global.Promise;
+
+
+
 
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
@@ -58,6 +73,7 @@ app.use((req, res, next) => {
     next(error);
 });
 
+
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
     res.json({
@@ -66,6 +82,8 @@ app.use((error, req, res, next) => {
         }
     });
 });
+
+
 
 
 

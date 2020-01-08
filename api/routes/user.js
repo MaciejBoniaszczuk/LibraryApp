@@ -4,24 +4,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 const User = require("../models/user");
-
+const passport = require('passport');
 router.post("/signup", (req, res, next) => {
-    const {
-        name,
-        email,
-        password,
-        password2
-    } = req.body;
-    console.log(req.body)
     User.find({
             email: req.body.email
         })
         .exec()
         .then(user => {
             if (user.length >= 1) {
-                return res.status(409).json({
-                    message: "Mail exists"
-                });
+                // return res.status(409).json({
+                //     message: "Mail exists"
+                // });
+                res.redirect('/mailexists');
             } else {
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     if (err) {
@@ -37,10 +31,7 @@ router.post("/signup", (req, res, next) => {
                         user
                             .save()
                             .then(result => {
-                                console.log(result);
-                                res.status(201).json({
-                                    message: "User created"
-                                });
+                                res.redirect('/')
                             })
                             .catch(err => {
                                 console.log(err);
@@ -53,6 +44,14 @@ router.post("/signup", (req, res, next) => {
             }
         });
 });
+
+// router.post('/login', (req, res, next) => {
+//     passport.authenticate('local', {
+//         successRedirect: '/dashboard',
+//         failureRedirect: '/',
+//         failureFlash: false
+//     })(req, res, next);
+// })
 
 router.post("/login", (req, res, next) => {
     User.find({
@@ -80,10 +79,7 @@ router.post("/login", (req, res, next) => {
                             expiresIn: "1h"
                         }
                     );
-                    return res.status(200).json({
-                        message: "Auth successful",
-                        token: token
-                    });
+                    return res.redirect('/dashboard');
                 }
                 res.status(401).json({
                     message: "Auth failed"

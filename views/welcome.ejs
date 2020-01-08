@@ -66,18 +66,19 @@
                     <div class="article__wrapper">
                         <h2 class="formHeader">Logowanie</h2>
                         <div class="form__wrapper">
-                            <form method="POST" class="SignIn__Form form">
+                            <form action="/user/login" method="POST" class="SignIn__Form form">
                                 <div class="form__bar">
                                     <label class="form__bar" for="userName"><span><img alt="Obrazek"
                                                 src="http://localhost:3000/myFiles/assets/img/user.png"
                                                 class="userImage"></span></label>
-                                    <input type="text" name="userName" placeholder="E-mail/Login" required="required">
+                                    <input type="text" name="email" id="email" placeholder="E-mail" required="required">
                                 </div>
                                 <div class="form__bar">
                                     <label class="form__bar" for="password"><span><img alt="Obrazek"
                                                 src="http://localhost:3000/myFiles/assets/img/password.png"
                                                 class="userImage"></span></label>
-                                    <input type="password" name="password" placeholder="Hasło" required="required">
+                                    <input type="password" name="password" id="password" placeholder="Hasło"
+                                        required="required">
                                 </div>
                                 <label for="checkbox" class="form__bar remember">
 
@@ -85,8 +86,8 @@
                                     <input class="chexbox_item" type="checkbox" name="checkbox">
 
                                 </label>
-                                <button class="form__button"><a href="user/login" style="color:black">Zaloguj
-                                        się</a></button>
+                                <button class="form__button">Zaloguj
+                                    się</button>
                                 <button class="form__button"><a href="user/register" style="color:black">Nie masz
                                         konta? Zarejestruj się</a></button>
                             </form>
@@ -107,8 +108,6 @@
     </div>
 
 
-
-    <script src="js/main.js"></script>
 
 </body>
 

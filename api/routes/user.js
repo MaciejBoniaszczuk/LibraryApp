@@ -96,6 +96,36 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+router.get("/", (req, res, next) => {
+    User.find()
+        .exec()
+        .then(docs => {
+            const response = {
+                count: docs.length,
+                products: docs.map(doc => {
+                    return {
+                        user: doc,
+                        request: {
+                            type: 'GET',
+                            url: 'http://localhost:3000/user/' + doc._id
+                        }
+                    }
+                })
+            };
+            res.status(200).json(response);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+});
+
+
+
+
+
 
 //Register Page
 router.get("/register", (req, res) => res.render("register"));

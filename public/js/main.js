@@ -7,7 +7,7 @@ fetch('http://localhost:3000/products/')
     })
     .then(data => {
         const repos = data;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 6; i++) {
             wszystkie_ksiazki.innerHTML += `<div><img src="http://localhost:3000/myFiles/assets/img/logoblue.png" width="20" height="20" hspace="5">${repos.products[i].name}</div>`
         }
 
@@ -22,7 +22,7 @@ fetch('http://localhost:3000/products/')
     })
     .then(data => {
         const repos = data;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 6; i++) {
             wolne_ksiazki.innerHTML += `<div><img src="http://localhost:3000/myFiles/assets/img/logogreen.png" width="20" height="20" hspace="5">${repos.products[i].name}</div>`
         }
 
@@ -35,7 +35,7 @@ fetch('http://localhost:3000/products/')
     })
     .then(data => {
         const repos = data;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 6; i++) {
             zalogowany.innerHTML += `<div><img src="http://localhost:3000/myFiles/assets/img/logogreen.png" width="20" height="20" hspace="5">${repos.products[i].name}</div>`
         }
 

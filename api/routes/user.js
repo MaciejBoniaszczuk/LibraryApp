@@ -90,6 +90,12 @@ router.post("/login", (req, res, next) => {
 //Login Page
 router.get("/login", (req, res) => res.render("login"));
 
+//logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
 
 //Register Page
 router.get("/register", (req, res) => res.render("register"));

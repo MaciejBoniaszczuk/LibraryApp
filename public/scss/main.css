@@ -150,6 +150,7 @@ li:first-child {
 	overflow: auto;
 	text-align: center;
 }
+
 .text_content_afterlogin {
 	height: 580px;
 	padding: 10px;
@@ -261,4 +262,23 @@ h3 {
 
 .chexbox_item {
 	margin-left: 10px;
+}
+
+.wolne_ksiazki {
+	font-size: 26px;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+
+}
+
+.wszystkie_ksiazki {
+	font-size: 26px;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+}
+
+.ksiazki_wszystkie {
+	padding: 16px;
 }

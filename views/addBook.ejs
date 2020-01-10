@@ -51,7 +51,7 @@
     <div class="menu">
         <ul>
             <li><a href="/">Strona główna</a></li>
-            <li class="dropdown"><a class="active" href="spis.html" class="dropbtn">Spis książek</a></li>
+            <li class="dropdown"><a class="active" href="spis" class="dropbtn">Spis książek</a></li>
             <li><a href="dashboard">Panel użytkownika</a></li>
             <li><a href="/user/logout">Wyloguj</a></li>
         </ul>
@@ -67,30 +67,29 @@
                 <div class="article__wrapper">
                     <h2 class="formHeader">Dodaj książkę</h2>
                     <div class="form__wrapper">
-                        <form action="addBook" method="POST" class="addBook__Form form">
+                        <form action="/products" method="POST" class="addBook__Form form">
                             <div class="form__bar">
                                 <label class="form__bar" for="bookName"><span><img alt="Obrazek"
-								src="http://localhost:3000/myFiles/assets/img/logo.jpg" width="23" height="23"
-                                            
-                                            class="userImage"></span></label>
+                                            src="http://localhost:3000/myFiles/assets/img/logo.jpg" width="23"
+                                            height="23" class="userImage"></span></label>
                                 <input type="text" name="name" id="name" placeholder="Tytuł" required="required">
                             </div>
                             <div class="form__bar">
                                 <label class="form__bar" for="Author"><span><img alt="Obrazek"
-                                           src="http://localhost:3000/myFiles/assets/img/user.png"
+                                            src="http://localhost:3000/myFiles/assets/img/user.png"
                                             class="userImage"></span></label>
-                                <input type="text" name="author" id="author" placeholder="Autor" required="required">
+                                <input type="text" name="price" id="price" placeholder="Autor" required="required">
                             </div>
-                            
+
                             <div class="spacer2"></div>
-                    
+
                             <button class="form__button">Dodaj</button>
-                            
+
                         </form>
                     </div>
                 </div>
             </main>
-            
+
             <h1>Spis wszystkich pozycji</h1>
             <div class="wszystkie_ksiazki"></div>
 

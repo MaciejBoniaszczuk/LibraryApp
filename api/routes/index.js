@@ -10,6 +10,6 @@ router.get('/dashboard', (req, res) => res.render('dashboard'));
 router.get('/authfailed', (req, res) => res.render('authfailed'));
 router.get('/spis', (req, res) => res.render('spis'));
 router.get('/addBook', (req, res) => res.render('addBook'));
-router.get("/register", (req, res) => res.render("register"));
+
 
 module.exports = router;

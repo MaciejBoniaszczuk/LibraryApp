@@ -89,7 +89,7 @@ router.post("/login", (req, res, next) => {
 });
 //Login Page
 router.get("/login", (req, res) => res.render("login"));
-
+router.get("/register", (req, res) => res.render("register"));
 //logout
 router.get('/logout', (req, res) => {
     req.logout();
@@ -158,7 +158,7 @@ router.get("/:userId", (req, res, next) => {
 
 
 //Register Page
-router.get("/register", (req, res) => res.render("register"));
+
 
 
 router.get("/dashboard", (req, res) => res.render("dashboard"));
